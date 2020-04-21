@@ -1,0 +1,37 @@
+header.masthead {
+  position: relative;
+  overflow: hidden;
+  height: 50vh;
+  background-image: url("../img/bg2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  .masthead-content {
+    text-shadow: 1px 0 0 #fff;
+    img {
+      max-width: 250px;
+    }
+    position: relative;
+    .masthead-heading {
+      font-size: 2rem;
+    }
+    .masthead-subheading {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 60vh;
+    .masthead-content {
+      .masthead-heading {
+        font-size: 3rem;
+      }
+      .masthead-subheading {
+        font-size: 2rem;
+      }
+    }
+  }
+}
