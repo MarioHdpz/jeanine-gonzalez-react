@@ -3,6 +3,8 @@
 }
 
 .btn-primary {
+  @include heading-font;
+  font-size: 1.8rem;
   background-color: $primary;
   border-color: $primary;
   &:active,

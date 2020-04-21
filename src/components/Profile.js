@@ -1,5 +1,5 @@
 import React from "react";
-import profilePic from "../img/profile.jpg";
+import profilePic from "../img/profile.png";
 
 function Profile() {
   return (
@@ -9,7 +9,7 @@ function Profile() {
           <div className="col-sm-6 col-md-3">
             <div className="">
               <img
-                className="img-fluid rounded-circle"
+                className="img-fluid"
                 src={profilePic}
                 alt="Sesión de yoga"
               />
@@ -17,7 +17,7 @@ function Profile() {
           </div>
           <div className="col-sm-6 col-md-9">
             <div>
-              <h2 className="display-6">Jeanine Gonzalez</h2>
+              <h1 className="display-6">Jeanine Gonzalez</h1>
               <ul className="info">
                 <li>
                   Licenciada en Administración de Empresas con Maestría en

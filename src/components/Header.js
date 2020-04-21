@@ -3,7 +3,7 @@ import React from "react";
 import logo from '../img/logo.png';
 import Button from "react-bootstrap/Button";
 
-function Header() {
+const Header = props => {
   return (
     <header className="masthead text-center">
       <div className="masthead-content h-100">
@@ -23,7 +23,7 @@ function Header() {
               Sesiones de prácticas contemplativas (Mindfulness) para calmar la
               ansiedad, el estrés y los sentimientos de tristeza.
             </h2>
-            <Button variant="primary" className="mt-4 text-dark font-weight-bold">
+            <Button variant="primary" onClick={() => props.onAction()} className="mt-4 text-dark font-weight-bold">
               Registrarse ahora
             </Button>
           </div>
