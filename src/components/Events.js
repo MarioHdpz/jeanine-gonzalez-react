@@ -27,12 +27,14 @@ const EventCard = (props) => (
   </div>
 );
 const Events = (props) => {
+  const activeEvents = props.events.filter(event => event.active === "TRUE");
+
   return (
     <Parallax blur={2} bgImage={background} bgImageAlt="the cat" strength={200}>
       <div className="events container mt-4 mb-4">
         <h1>Próximas sesiones</h1>
         <div className="row justify-content-center">
-          {props.events.map((data) => {
+          {activeEvents.map((data) => {
             return (
               <EventCard
                 {...data}

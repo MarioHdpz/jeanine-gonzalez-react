@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+
 import { Parallax } from "react-parallax";
 import axios from "axios";
 
@@ -28,14 +30,20 @@ const EventForm = (props) => {
     nombre: "",
     correo: "",
     comentarios: "",
+    telefono: "",
   });
+  const [loader, setLoader] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleSumbit = async (event) => {
     event.preventDefault();
+    setLoader(true);
+    const data = { id_sesion: props.formKey, ...formData };
     const url =
-      "https://script.google.com/macros/s/AKfycbzm-XgzVgh4RsDlHmpY5sjOlEtB-VcHKkfaSV299aw2V8dmAg8/exec";
-    const serializedData = new URLSearchParams(formData).toString(); 
-    await axios.get(url + serializedData );
+      "https://script.google.com/macros/s/AKfycbzm-XgzVgh4RsDlHmpY5sjOlEtB-VcHKkfaSV299aw2V8dmAg8/exec?";
+    const serializedData = new URLSearchParams(data).toString();
+    await axios.get(url + serializedData);
+    setSuccess(true);
   };
 
   const handleChange = (event, key) => {
@@ -45,54 +53,89 @@ const EventForm = (props) => {
     });
   };
 
+  const form = (
+    <Form
+      onSubmit={(e) => handleSumbit(e)}
+      className="text-left font-weight-bold"
+    >
+      <Form.Group controlId="nombre">
+        <Form.Label>Nombre</Form.Label>
+        <Form.Control
+          type="input"
+          placeholder="Tu nombre completo"
+          required
+          value={formData.nombre}
+          onChange={(e) => handleChange(e, "nombre")}
+        />
+      </Form.Group>
+      <Form.Group controlId="correo">
+        <Form.Label>Correo electrónico</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="nombre@ejemplo.com"
+          required
+          value={formData.correo}
+          onChange={(e) => handleChange(e, "correo")}
+        />
+      </Form.Group>
+      <Form.Group controlId="telefono">
+        <Form.Label>Teléfono</Form.Label>
+        <Form.Control
+          type="phone"
+          value={formData.telefono}
+          onChange={(e) => handleChange(e, "telefono")}
+        />
+      </Form.Group>
+      <Form.Group controlId="comentarios">
+        <Form.Label>Comentarios</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows="5"
+          value={formData.comentarios}
+          onChange={(e) => handleChange(e, "comentarios")}
+        />
+      </Form.Group>
+      <div className="text-center">
+        <Button
+          variant="outline-danger"
+          className="mx-3"
+          onClick={() => props.onCancel()}
+        >
+          Cancelar
+        </Button>
+        <Button
+          disabled={loader}
+          variant="success"
+          type="submit"
+          className="mx-3"
+        >
+          {loader ? (
+            <Spinner
+              as="span"
+              animation="grow"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+          ) : null}
+          {loader ? "Registrando" : "Registrarme"}
+        </Button>
+      </div>
+    </Form>
+  );
+
+  const successMessage = (
+    <Card body>
+      ¡Muchas felicidades! Tu registro ha sido exitoso, nos pondremos en contacto
+      contigo antes del evento para darte más detalles sobre tu participación.
+    </Card>
+  );
+
   return (
     <Parallax blur={2} bgImage={background} bgImageAlt="the cat" strength={200}>
       <div className="container my-4 col-sm-6">
         <EventCard {...props.event} />
-        <Form
-          onSubmit={(e) => handleSumbit(e)}
-          className="text-left font-weight-bold"
-        >
-          <Form.Group controlId="nombre">
-            <Form.Label>Nombre</Form.Label>
-            <Form.Control
-              type="input"
-              placeholder="Tu nombre completo"
-              required
-              value={formData.nombre}
-              onChange={(e) => handleChange(e, "nombre")}
-            />
-          </Form.Group>
-          <Form.Group controlId="correo">
-            <Form.Label>Correo electrónico</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="nombre@ejemplo.com"
-              required
-              value={formData.correo}
-              onChange={(e) => handleChange(e, "correo")}
-            />
-          </Form.Group>
-          <Form.Group controlId="comentarios">
-            <Form.Label>Comentarios</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows="5"
-              value={formData.comentarios}
-              onChange={(e) => handleChange(e, "comentarios")}
-            />
-          </Form.Group>
-          <Button
-            variant="outline-danger"
-            className="mx-3"
-            onClick={() => props.onCancel()}
-          >
-            Cancelar
-          </Button>
-          <Button variant="outline-success" type="submit" className="mx-3">
-            Registrar
-          </Button>
-        </Form>
+        {success ? successMessage : form}
       </div>
     </Parallax>
   );

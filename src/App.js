@@ -46,6 +46,7 @@ function App() {
             />
           ) : (
             <Form
+              formKey={formKey}
               onCancel={() => setformKey(null)}
               event={events.find((data) => data.key === formKey)}
             />
