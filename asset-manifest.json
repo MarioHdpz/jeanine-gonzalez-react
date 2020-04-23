@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/mariohdpz.github.io/jeanine-gonzalez-react/static/css/main.0fc27154.chunk.css",
-    "main.js": "/mariohdpz.github.io/jeanine-gonzalez-react/static/js/main.50e06642.chunk.js",
-    "main.js.map": "/mariohdpz.github.io/jeanine-gonzalez-react/static/js/main.50e06642.chunk.js.map",
-    "runtime-main.js": "/mariohdpz.github.io/jeanine-gonzalez-react/static/js/runtime-main.b8f28878.js",
-    "runtime-main.js.map": "/mariohdpz.github.io/jeanine-gonzalez-react/static/js/runtime-main.b8f28878.js.map",
-    "static/js/2.fba56a9b.chunk.js": "/mariohdpz.github.io/jeanine-gonzalez-react/static/js/2.fba56a9b.chunk.js",
-    "static/js/2.fba56a9b.chunk.js.map": "/mariohdpz.github.io/jeanine-gonzalez-react/static/js/2.fba56a9b.chunk.js.map",
-    "index.html": "/mariohdpz.github.io/jeanine-gonzalez-react/index.html",
-    "precache-manifest.9730b12c2e252979512d0f3700748b37.js": "/mariohdpz.github.io/jeanine-gonzalez-react/precache-manifest.9730b12c2e252979512d0f3700748b37.js",
-    "service-worker.js": "/mariohdpz.github.io/jeanine-gonzalez-react/service-worker.js",
-    "static/css/main.0fc27154.chunk.css.map": "/mariohdpz.github.io/jeanine-gonzalez-react/static/css/main.0fc27154.chunk.css.map",
-    "static/js/2.fba56a9b.chunk.js.LICENSE.txt": "/mariohdpz.github.io/jeanine-gonzalez-react/static/js/2.fba56a9b.chunk.js.LICENSE.txt",
-    "static/media/background.jpg": "/mariohdpz.github.io/jeanine-gonzalez-react/static/media/background.939ab334.jpg",
-    "static/media/App.scss": "/mariohdpz.github.io/jeanine-gonzalez-react/static/media/header.1d5bbcc0.jpg",
-    "static/media/logo.png": "/mariohdpz.github.io/jeanine-gonzalez-react/static/media/logo.f264f7ba.png",
-    "static/media/profile.png": "/mariohdpz.github.io/jeanine-gonzalez-react/static/media/profile.c25278f3.png"
+    "main.css": "/static/css/main.8eda99b9.chunk.css",
+    "main.js": "/static/js/main.7a866ce0.chunk.js",
+    "main.js.map": "/static/js/main.7a866ce0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0bbb20ea.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0bbb20ea.js.map",
+    "static/js/2.fba56a9b.chunk.js": "/static/js/2.fba56a9b.chunk.js",
+    "static/js/2.fba56a9b.chunk.js.map": "/static/js/2.fba56a9b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e85a53f46748048beaca4e3b31c23d42.js": "/precache-manifest.e85a53f46748048beaca4e3b31c23d42.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.8eda99b9.chunk.css.map": "/static/css/main.8eda99b9.chunk.css.map",
+    "static/js/2.fba56a9b.chunk.js.LICENSE.txt": "/static/js/2.fba56a9b.chunk.js.LICENSE.txt",
+    "static/media/background.jpg": "/static/media/background.939ab334.jpg",
+    "static/media/App.scss": "/static/media/header.1d5bbcc0.jpg",
+    "static/media/logo.png": "/static/media/logo.f264f7ba.png",
+    "static/media/profile.png": "/static/media/profile.c25278f3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.b8f28878.js",
+    "static/js/runtime-main.0bbb20ea.js",
     "static/js/2.fba56a9b.chunk.js",
-    "static/css/main.0fc27154.chunk.css",
-    "static/js/main.50e06642.chunk.js"
+    "static/css/main.8eda99b9.chunk.css",
+    "static/js/main.7a866ce0.chunk.js"
   ]
 }
