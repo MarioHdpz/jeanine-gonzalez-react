@@ -29,7 +29,7 @@ const EventForm = (props) => {
   const [formData, setForm] = useState({
     nombre: "",
     correo: "",
-    comentarios: "",
+    referencia: "",
     telefono: "",
   });
   const [loader, setLoader] = useState(false);
@@ -86,13 +86,13 @@ const EventForm = (props) => {
           onChange={(e) => handleChange(e, "telefono")}
         />
       </Form.Group>
-      <Form.Group controlId="comentarios">
-        <Form.Label>Comentarios</Form.Label>
+      <Form.Group controlId="referencia">
+        <Form.Label>¿Cómo te enteraste?</Form.Label>
         <Form.Control
           as="textarea"
-          rows="5"
-          value={formData.comentarios}
-          onChange={(e) => handleChange(e, "comentarios")}
+          rows="3"
+          value={formData.referencia}
+          onChange={(e) => handleChange(e, "referencia")}
         />
       </Form.Group>
       <div className="text-center">
