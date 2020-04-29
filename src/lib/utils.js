@@ -1,6 +1,11 @@
-export const formatDate = (stringDate) => {
+export const getDate = (stringDate) => {
   const parts = stringDate.split("-");
   const date = new Date(parts[0], parts[1] - 1, parts[2]);
+  return date;
+};
+
+export const formatDate = (stringDate) => {
+  const date = getDate(stringDate);
   const options = {
     weekday: "long",
     year: "numeric",
