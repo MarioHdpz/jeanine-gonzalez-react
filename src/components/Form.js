@@ -126,8 +126,9 @@ const EventForm = (props) => {
 
   const successMessage = (
     <Card body>
-      ¡Muchas felicidades! Tu registro ha sido exitoso, nos pondremos en contacto
-      contigo antes del evento para darte más detalles sobre tu participación.
+      ¡Felicidades! Tu registro ha sido exitoso. Por favor revisa tu correo, en
+      las próximas horas te llegará información de cómo unirte a nuestras
+      sesiones gratuitas.
     </Card>
   );
 
