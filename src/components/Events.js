@@ -47,7 +47,7 @@ const Events = (props) => {
       const [hour, minutes] = event.hour.split(":");
       const datetime = moment(event.date).hour(hour).minute(minutes);
       return datetime > moment();
-    });
+    }).slice(0, 2);
   return (
     <Parallax blur={2} bgImage={background} bgImageAlt="the cat" strength={200}>
       <div className="events container mt-4 mb-4">
