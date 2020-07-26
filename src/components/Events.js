@@ -47,11 +47,15 @@ const Events = (props) => {
       const [hour, minutes] = event.hour.split(":");
       const datetime = moment(event.date).hour(hour).minute(minutes);
       return datetime > moment();
-    }).slice(0, 2);
+    })
+    .slice(0, 2);
   return (
     <Parallax blur={2} bgImage={background} bgImageAlt="the cat" strength={200}>
       <div className="events container mt-4 mb-4">
-        <h1>Próximas sesiones</h1>
+        <h2 className="masthead-subheading mb-0">
+          Sesiones de prácticas contemplativas (Mindfulness) para calmar la
+          ansiedad, el estrés y los sentimientos de tristeza.
+        </h2>
         <div className="row justify-content-center">
           {activeEvents.map((data) => {
             return (
@@ -61,6 +65,9 @@ const Events = (props) => {
               />
             );
           })}
+          {activeEvents.length === 0 && (
+            <h4 className="p-5 event card my-5">No hay sesiones programadas por el momento.</h4>
+          )}
         </div>
       </div>
     </Parallax>

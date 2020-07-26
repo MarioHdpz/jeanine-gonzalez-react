@@ -30,12 +30,15 @@ header.masthead {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 570px) {
   header.masthead {
     height: 70vh;
     .masthead-content {
       img {
         max-width: 500px;
+      }
+      .row {
+        margin-top: 2em;;
       }
       .masthead-heading {
         font-size: 3.5rem;

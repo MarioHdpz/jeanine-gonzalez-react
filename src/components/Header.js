@@ -3,31 +3,47 @@ import React from "react";
 import logo from "../img/logo.png";
 import Button from "react-bootstrap/Button";
 
+const CallToAction = (props) => (
+  <div className="col-lg-6 my-2 d-flex flex-column justify-content-between">
+    <h2 className="masthead-subheading">{props.title}</h2>
+    <div className="action-button-container">
+      <Button
+        onClick={() => props.action()}
+        className="action-button text-dark font-weight-bold"
+      >
+        {props.buttonText}
+        <i></i>
+      </Button>
+    </div>
+  </div>
+);
+
+const navigateToCalendar = () => {
+  window.location.href = "https://calendly.com/mariohd/asesoria";
+}
+
 const Header = (props) => {
   return (
     <header className="masthead text-center">
       <div className="masthead-content h-100">
-        <div className="position-absolute w-100">
+        <div className="w-100">
           <img className="img-fluid mt-4" src={logo} alt="Jeanine Gonzalez" />
         </div>
-        <div className="container h-100 d-flex flex-column justify-content-center">
-          <div className="mt-5">
-            <h1 className="masthead-heading mb-0">
-              Aprendiendo a respirar para sanar
-            </h1>
-            <h2 className="masthead-subheading mb-0">
-              Sesiones de prácticas contemplativas (Mindfulness) para calmar la
-              ansiedad, el estrés y los sentimientos de tristeza.
-            </h2>
-            <div className="action-button-container mt-5">
-              <Button
-                onClick={() => props.onAction()}
-                className="action-button mt-4 text-dark font-weight-bold"
-              >
-                Registrate Aquí <span>Es Gratis</span>
-                <i></i>
-              </Button>
-            </div>
+        <div className="container d-flex flex-column justify-content-center">
+          <h1 className="masthead-heading mt-3 mb-5">
+            Aprendiendo a respirar para sanar
+          </h1>
+          <div className="row">
+            <CallToAction
+              title="Acompañamiento psicoterapéutico"
+              buttonText="Haz tu cita aquí"
+              action={navigateToCalendar}
+            />
+            <CallToAction
+              title="Sesiones Mindfulness"
+              buttonText="Conoce más"
+              action={props.onAction}
+            />
           </div>
         </div>
       </div>
