@@ -39,7 +39,7 @@ const Header = (props) => {
               className="calendly-loader"
             />
           )}
-          <InlineWidget url="https://calendly.com/mariohd/asesoria" />
+          <InlineWidget url="https://calendly.com/psicoterapiaymindfulness" />
         </CalendlyEventListener>
       </header>
     );
