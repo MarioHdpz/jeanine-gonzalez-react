@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import logo from "../img/logo.png";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+
+import { InlineWidget, CalendlyEventListener } from "react-calendly";
 
 const CallToAction = (props) => (
   <div className="col-lg-6 my-2 d-flex flex-column justify-content-between">
@@ -18,11 +21,30 @@ const CallToAction = (props) => (
   </div>
 );
 
-const navigateToCalendar = () => {
-  window.location.href = "https://calendly.com/mariohd/asesoria";
-}
-
 const Header = (props) => {
+  const [calendlyOpened, openCalendly] = useState(false);
+  const [loader, setLoader] = useState(true);
+
+  if (calendlyOpened) {
+    return (
+      <header className="calendly-container text-center">
+        <CalendlyEventListener onProfilePageViewed={() => setLoader(false)}>
+          {loader && (
+            <Spinner
+              as="span"
+              animation="grow"
+              size="lg"
+              role="status"
+              aria-hidden="true"
+              className="calendly-loader"
+            />
+          )}
+          <InlineWidget url="https://calendly.com/mariohd/asesoria" />
+        </CalendlyEventListener>
+      </header>
+    );
+  }
+
   return (
     <header className="masthead text-center">
       <div className="masthead-content h-100">
@@ -37,7 +59,7 @@ const Header = (props) => {
             <CallToAction
               title="Acompañamiento psicoterapéutico"
               buttonText="Haz tu cita aquí"
-              action={navigateToCalendar}
+              action={() => openCalendly(true)}
             />
             <CallToAction
               title="Sesiones Mindfulness"

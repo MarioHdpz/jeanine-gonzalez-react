@@ -38,7 +38,7 @@ header.masthead {
         max-width: 500px;
       }
       .row {
-        margin-top: 2em;;
+        margin-top: 2em;
       }
       .masthead-heading {
         font-size: 3.5rem;
@@ -55,5 +55,31 @@ header.masthead {
         font-size: 2rem;
       }
     }
+  }
+}
+
+.calendly-container {
+  background-image: url("../img/header.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  .calendly-inline-widget {
+    height: 1000px !important;
+    @include media-breakpoint-up(md) {
+      height: 650px !important;
+    }
+  }
+  // .calendly-spinner {
+  //   z-index: 0;
+  //   top: 35%;
+  //   > div {
+  //     background-color: white;
+  //   }
+  // }
+  .calendly-loader {
+    position: absolute;
+    top: 35%;
+    color: white;
   }
 }
